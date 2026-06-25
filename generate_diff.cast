@@ -1,0 +1,11 @@
+{"version": 2, "width": 76, "height": 19, "timestamp": 1781858359, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.056887, "o", "\u001b[?2004h\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
+[3.670611, "o", "\u001b[7mgendiff tests/fixtures/fi\u001b[27m\u001b[7ml\u001b[27m\u001b[7me1.json tests/fixtures/file2.json\u001b[27m"]
+[4.590728, "o", "\u001b[A\r\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ gendiff tests/fixtures/file1.json tests/fixtures/file2.json\r\n\u001b[?2004l\r"]
+[4.666523, "o", "{\r\n  - follow: false\r\n    host: hexlet.io\r\n  - proxy: 123.234.53.22\r\n  - timeout: 50\r\n  + timeout: 20\r\n  + verbose: true\r\n}\r\n"]
+[4.684418, "o", "\u001b[?2004h\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
+[11.2037, "o", "\u001b[7muv run gendiff tests/fixt\u001b[27m\u001b[7mu\u001b[27m\u001b[7mres/file1.json tests/fixtures/file2.json\u001b[27m"]
+[12.075762, "o", "\u001b[A\r\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ uv run gendiff tests/fixtures/file1.json tests/fixtures/file2.json\r\n\u001b[?2004l\r"]
+[12.182047, "o", "{\r\n  - follow: false\r\n    host: hexlet.io\r\n  - proxy: 123.234.53.22\r\n  - timeout: 50\r\n  + timeout: 20\r\n  + verbose: true\r\n}\r\n"]
+[12.204518, "o", "\u001b[?2004h\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
+[14.036027, "o", "\u001b[?2004l\r\r\nexit\r\n"]
