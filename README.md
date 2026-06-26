@@ -6,3 +6,6 @@
 
 # Сравнение json-файлов
 [![asciicast](https://asciinema.org/a/5K1b9F8wX4o7s8CG.svg)](https://asciinema.org/a/5K1b9F8wX4o7s8CG)
+
+# Сравнение yaml-файлов
+[![asciicast](https://asciinema.org/a/AiPqHudiE1JmgGFD.svg)](https://asciinema.org/a/AiPqHudiE1JmgGFD)
