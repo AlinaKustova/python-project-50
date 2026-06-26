@@ -34,3 +34,4 @@ jobs:
             -Dsonar.projectKey=AlinaKustova_python-project-50
             -Dsonar.organization=alinakustova
             -Dsonar.python.coverage.reportPaths=coverage.xml
+            -Dsonar.coverage.exclusions=tests/**/*
