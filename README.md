@@ -9,3 +9,7 @@
 
 # Сравнение yaml-файлов
 [![asciicast](https://asciinema.org/a/AiPqHudiE1JmgGFD.svg)](https://asciinema.org/a/AiPqHudiE1JmgGFD)
+
+# Рекурсивное сравнение вложенных структур
+[![asciicast](https://asciinema.org/a/n8GK1bpLQtuWEH9c)](https://asciinema.org/a/n8GK1bpLQtuWEH9c)
+
