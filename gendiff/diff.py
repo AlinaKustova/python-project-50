@@ -1,6 +1,7 @@
-from gendiff.parser import read_file
 from gendiff.diff_builder import build_diff
 from gendiff.formatting import stylish
+from gendiff.parser import read_file
+
 
 def generate_diff(path1, path2, format_name='stylish'):
     file1 = read_file(path1)
