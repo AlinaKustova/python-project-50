@@ -13,3 +13,5 @@
 # Рекурсивное сравнение вложенных структур
 [![asciicast](https://asciinema.org/a/n8GK1bpLQtuWEH9c)](https://asciinema.org/a/n8GK1bpLQtuWEH9c)
 
+# Демонстрация работы форматера "plain"
+[![asciicast](https://asciinema.org/a/h6dXKVMwnM3l0TDX#)](https://asciinema.org/a/h6dXKVMwnM3l0TDX#)

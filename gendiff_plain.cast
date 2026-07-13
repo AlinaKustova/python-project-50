@@ -1,0 +1,8 @@
+{"version": 2, "width": 76, "height": 19, "timestamp": 1783927452, "env": {"SHELL": "/bin/bash", "TERM": "xterm-256color"}}
+[0.053242, "o", "\u001b[?2004h\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
+[4.581763, "o", "\u001b[7mgendiff --format plain te\u001b[27m\u001b[7ms\u001b[27m\u001b[7mts/test_data/file1_nested.json tests/test_data/file2_nested.json\u001b[27m"]
+[5.606385, "o", "\u001b[A\b\b\b\b\b\b\b\b\b\b\b\b\b\bgendiff --format plain tests/test_data/file1_nested.json tests/test_data/file2_nested.json\r\n\u001b[?2004l\r"]
+[5.735514, "o", "Property 'common.follow' was added with value: false\r\nProperty 'common.setting2' was removed\r\nProperty 'common.setting3' was updated. From true to null\r\nProperty 'common.setting4' was added with value: 'blah blah'\r\nProperty 'common.setting5' was added with value: [complex value]\r\nProperty 'common.setting6.doge.wow' was updated. From '' to 'so much'\r\nProperty 'common.setting6.ops' was added with value: 'vops'\r\nProperty 'group1.baz' was updated. From 'bas' to 'bars'\r\nProperty 'group1.nest' was updated. From [complex value] to 'str'\r\nProperty 'group2' was removed\r\nProperty 'group3' was added with value: [complex value]\r\n"]
+[5.764802, "o", "\u001b[?2004h\u001b]0;antony_kustov@DESKTOP-L01V15N: ~/python-project-50\u0007\u001b[01;32mantony_kustov@DESKTOP-L01V15N\u001b[00m:\u001b[01;34m~/python-project-50\u001b[00m$ "]
+[9.323418, "o", "\u001b[?2004l\r\r\n"]
+[9.326803, "o", "exit\r\n"]

@@ -58,3 +58,23 @@ def test_nested_yaml():
     result = generate_diff(file1, file2)
 
     assert result == expected
+
+def test_plain_json():
+    file1 = 'tests/test_data/file1_nested.json'
+    file2 = 'tests/test_data/file2_nested.json'
+
+    with open('tests/test_data/result_plain.txt') as file:
+        expected = file.read().strip()
+    result = generate_diff(file1, file2, 'plain')
+
+    assert result == expected
+
+def test_plain_yaml():
+    file1 = 'tests/test_data/file1_nested.yaml'
+    file2 = 'tests/test_data/file2_nested.yaml'
+
+    with open('tests/test_data/result_plain.txt') as file:
+        expected = file.read().strip()
+    result = generate_diff(file1, file2, 'plain')
+
+    assert result == expected
