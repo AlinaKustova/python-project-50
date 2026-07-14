@@ -1,8 +1,10 @@
 def plain(data, path=''):
     result = []
-
-    for elem in data:
-        key, status = elem['key'], elem['status']
+    i = 0
+    while i < len(data):
+        elem = data[i]
+        key = elem['key']
+        status = elem['status']
         current_path = path + '.' + key if path else key
 
         if status == 'added':
@@ -10,27 +12,65 @@ def plain(data, path=''):
                 result.append(format_added('children', current_path))
             else:
                 result.append(format_added(elem['value'], current_path))
-        
+            i += 1
         elif status == 'removed':
-            if 'children' in elem and 'value' in elem:
-                result.append(format_removed(current_path, is_complex=True))
+            merged = merge_removed_added(data, i, current_path)
+            if merged is not None:
+                result.append(merged)
+                i += 2
             else:
                 result.append(format_removed(current_path))
-                
+                i += 1
         elif status == 'changed':
-            result.append(
-                format_changed(
-                    elem['old_value'],
-                    elem['new_value'],
-                    current_path
-                )
-            )
-        
+            result.append(format_changed(
+                elem['old_value'], elem['new_value'], current_path
+            ))
+            i += 1
         elif status == 'nested':
             result.extend(plain(elem['children'], current_path))
+            i += 1
+        else:
+            i += 1
 
-    return merge(result)
-            
+    return result
+
+
+def merge_removed_added(data, i, current_path):
+    """Пытается объединить removed + added в одну строку updated."""
+    if i + 1 >= len(data):
+        return None
+    next_elem = data[i + 1]
+    if next_elem['status'] != 'added' or next_elem['key'] != data[i]['key']:
+        return None
+
+    removed = data[i]
+    added = next_elem
+    old_complex = 'children' in removed
+    new_complex = 'children' in added
+
+    if old_complex:
+        old_str = '[complex value]'
+    else:
+        old_str = format_simple_value(removed.get('value'))
+
+    if new_complex:
+        new_str = '[complex value]'
+    else:
+        new_str = format_simple_value(added.get('value'))
+
+    return (f"Property '{current_path}' was updated. "
+            f"From {old_str} to {new_str}")
+
+
+def format_simple_value(value):
+    """Форматирует простое значение с кавычками для строк (кроме спец. слов)."""
+    formatted = format_value(value)
+    if isinstance(formatted, str) and formatted not in (
+        'true', 'false', 'null', "''"
+    ):
+        return f"'{formatted}'"
+    return formatted
+
 
 def format_added(value, path):
     if value == 'children':
@@ -90,38 +130,3 @@ def format_value(value):
     if isinstance(value, str) and value == '':
         return "''"
     return value
-
-
-def merge(result):
-    merged = []
-    i = 0
-    while i < len(result):
-        line = result[i]
-        
-        if i + 1 < len(result):
-            next_line = result[i + 1]
-            
-            if 'removed' in line and 'added' in next_line:
-                path1 = line[
-                    line.find("'") + 1:
-                    line.find("'", line.find("'") + 1)
-                ]
-                path2 = next_line[
-                    next_line.find("'") + 1:
-                    next_line.find("'", next_line.find("'") + 1)
-                ]
-                
-                if path1 == path2:
-                    value_start = next_line.find(": ") + 2
-                    new_value = next_line[value_start:]
-                    merged.append(
-                        f"Property '{path1}' was updated. "
-                        f"From [complex value] to {new_value}"
-                    )
-                    i += 2
-                    continue
-        
-        merged.append(line)
-        i += 1
-    
-    return merged

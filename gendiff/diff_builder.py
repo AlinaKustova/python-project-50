@@ -84,7 +84,7 @@ def process_added_key(file2, key, current_path, inside_added):
 
 
 def process_common_key(
-        file1, file2, key, current_path, 
+        file1, file2, key, current_path,
         inside_removed, inside_added):
     temp_dict = {'key': key}
     extra_nodes = []
