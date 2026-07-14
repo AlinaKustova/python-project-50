@@ -51,24 +51,28 @@ def format_removed(path):
 
 
 def format_changed(old_value, new_value, path):
-    old_value = format_value(old_value)
-    new_value = format_value(new_value)
-
+    if isinstance(old_value, dict):
+        old_value = '[complex value]'
+    else:
+        old_value = format_value(old_value)
+    
+    if isinstance(new_value, dict):
+        new_value = '[complex value]'
+    else:
+        new_value = format_value(new_value)
+    
     if (
         isinstance(old_value, str)
-        and old_value != 'true'
-        and old_value != 'false'
-        and old_value != 'null'
+        and old_value not in ('true', 'false', 'null', '[complex value]', "''")
     ):
-        if (
-            isinstance(new_value, str)
-            and new_value != 'true'
-            and new_value != 'false'
-            and new_value != 'null'
-        ):
-            return (f"Property '{path}' was updated. "
-                    f"From '{old_value}' to '{new_value}'")
-
+        old_value = f"'{old_value}'"
+    
+    if (
+        isinstance(new_value, str)
+        and new_value not in ('true', 'false', 'null', '[complex value]', "''")
+    ):
+        new_value = f"'{new_value}'"
+    
     return (f"Property '{path}' was updated. "
             f"From {old_value} to {new_value}")
 
@@ -78,6 +82,8 @@ def format_value(value):
         return 'null'
     if isinstance(value, bool):
         return str(value).lower()
+    if isinstance(value, str) and value == '':
+        return "''"
     return value
 
 
