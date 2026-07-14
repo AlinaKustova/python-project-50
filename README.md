@@ -15,3 +15,6 @@
 
 # Демонстрация работы форматера "plain"
 [![asciicast](https://asciinema.org/a/h6dXKVMwnM3l0TDX#)](https://asciinema.org/a/h6dXKVMwnM3l0TDX#)
+
+# Демонстрация работы форматера "json"
+[![asciicast](https://asciinema.org/a/jRxxjxDXZoAj0OYN)](https://asciinema.org/a/jRxxjxDXZoAj0OYN)
