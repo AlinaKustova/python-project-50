@@ -12,8 +12,11 @@ def plain(data, path=''):
                 result.append(format_added(elem['value'], current_path))
         
         elif status == 'removed':
-            result.append(format_removed(current_path))
-        
+            if 'children' in elem and 'value' in elem:
+                result.append(format_removed(current_path, is_complex=True))
+            else:
+                result.append(format_removed(current_path))
+                
         elif status == 'changed':
             result.append(
                 format_changed(
@@ -46,7 +49,9 @@ def format_added(value, path):
     return f"Property '{path}' was added with value: {value}"
 
 
-def format_removed(path):
+def format_removed(path, is_complex=False):
+    if is_complex:
+        return f"Property '{path}' was removed with value: [complex value]"
     return f"Property '{path}' was removed"
 
 
