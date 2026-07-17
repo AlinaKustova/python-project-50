@@ -1,4 +1,4 @@
-from gendiff.parser import read_file
+from gendiff.scripts.parser import read_file
 
 
 def test_read_file1_json():
